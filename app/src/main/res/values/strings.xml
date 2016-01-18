@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Find Player</string>
+    <string name="game_god_fragment">This is the game god fragment</string>
+    <string name="explore_fragment">This is the explore fragment</string>
+    <string name="message_fragment">This is the message fragment</string>
+    <string name="mine_fragment">This is the mine fragment</string>
+    <string name="game_god">游神</string>
+    <string name="explore">探索</string>
+    <string name="message">信息</string>
+    <string name="mine">我的</string>
 </resources>
