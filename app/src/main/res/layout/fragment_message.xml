@@ -8,6 +8,8 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/message_fragment" />
+        android:text="@string/message_fragment"
+        android:textSize="@dimen/sub_tab_size"
+        android:background="#00FF33"/>
 
 </FrameLayout>

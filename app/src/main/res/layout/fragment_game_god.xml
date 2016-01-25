@@ -3,15 +3,87 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.centling.findplayer.GameGodFragment">
-
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/game_god_fragment" />
-    <com.centling.findplayer.customview.ImageSlideView
-        android:id="@+id/slideshowView"
-        android:layout_width="match_parent"
-        android:layout_height="180dp"
-        android:layout_centerHorizontal="true"/>
-
+        android:orientation="vertical"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="#D3D3D3"
+            android:gravity="center">
+            <EditText
+                android:id="@+id/box_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:paddingLeft="35dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/search_frame"
+                android:textSize="18sp"
+                android:hint="@string/search" />
+            <ImageView
+                android:id="@+id/btn_search_empty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="9dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/search_delete"
+                android:visibility="gone"/>
+        </RelativeLayout>
+        <com.centling.findplayer.customview.ImageSlideView
+            android:id="@+id/slideshowView"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_centerHorizontal="true"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/sub_tab_synthesis"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/tab_synthesis"
+                android:textSize="@dimen/sub_tab_size"/>
+            <TextView
+                android:id="@+id/sub_tab_hot"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/tab_hot"
+                android:textSize="@dimen/sub_tab_size"/>
+            <TextView
+                android:id="@+id/sub_tab_freshman"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/tab_freshman"
+                android:textSize="@dimen/sub_tab_size"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#222222">
+            <ImageView
+                android:id="@+id/sub_tab_cursor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/tab_cursor"
+                android:scaleType="matrix"
+                android:background="#222222"/>
+        </LinearLayout>
+        <android.support.v4.view.ViewPager
+            android:id="@+id/player_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
 </FrameLayout>

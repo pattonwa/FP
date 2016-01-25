@@ -4,8 +4,17 @@
     <string name="explore_fragment">This is the explore fragment</string>
     <string name="message_fragment">This is the message fragment</string>
     <string name="mine_fragment">This is the mine fragment</string>
+    <string name="date_god_fragment">This is the data god fragment</string>
     <string name="game_god">游神</string>
     <string name="explore">探索</string>
     <string name="message">信息</string>
     <string name="mine">我的</string>
+    <string name="tab_synthesis">综合</string>
+    <string name="tab_hot">热门</string>
+    <string name="tab_freshman">新手</string>
+    <string name="date_god">约神</string>
+    <string name="search">请输入文字……</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

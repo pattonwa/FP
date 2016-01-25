@@ -2,14 +2,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.centling.findplayer.MineFragment">
+    tools:context="com.centling.findplayer.DateGodFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/mine_fragment"
+        android:text="@string/date_god_fragment"
         android:textSize="@dimen/sub_tab_size"
-        android:background="#FFFFFF"/>
+        android:background="#333FF0"/>
 
 </FrameLayout>

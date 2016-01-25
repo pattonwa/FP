@@ -15,15 +15,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private LinearLayout tabExplore;
     private LinearLayout tabMessage;
     private LinearLayout tabMine;
+    private LinearLayout tabDateGod;
+
     private ImageView ivGameGod;
     private ImageView ivExplore;
     private ImageView ivMessage;
     private ImageView ivMine;
+    private ImageView ivDateGod;
+
     private GameGodFragment fgGameGod;
     private ExploreFragment fgExplore;
     private MessageFragment fgMessage;
     private MineFragment fgMine;
+    private DateGodFragment fgDateGod;
     private FragmentManager fm;
+
 
 
     @Override
@@ -35,16 +41,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tabExplore = (LinearLayout)findViewById(R.id.tab_explore);
         tabMessage = (LinearLayout)findViewById(R.id.tab_message);
         tabMine = (LinearLayout)findViewById(R.id.tab_mine);
+        tabDateGod = (LinearLayout)findViewById(R.id.tab_date_god);
+
         tabGameGod.setOnClickListener(this);
         tabExplore.setOnClickListener(this);
         tabMessage.setOnClickListener(this);
         tabMine.setOnClickListener(this);
+        tabDateGod.setOnClickListener(this);
 
         //initial image view
         ivGameGod = (ImageView)findViewById(R.id.iv_game_god);
         ivExplore = (ImageView)findViewById(R.id.iv_explore);
         ivMessage = (ImageView)findViewById(R.id.iv_message);
         ivMine = (ImageView)findViewById(R.id.iv_mine);
+        ivDateGod = (ImageView)findViewById(R.id.iv_date_god);
 
         //set default fragment
         fm = getFragmentManager();
@@ -74,11 +84,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 setFragment(fgMessage);
                 break;
             case R.id.tab_mine:
-                if (fgMine == null){
+                if(fgMine == null){
                     fgMine = new MineFragment();
                 }
                 ivMine.setImageResource(R.drawable.mine_on);
                 setFragment(fgMine);
+                break;
+            case R.id.tab_date_god:
+                if(fgDateGod == null){
+                    fgDateGod = new DateGodFragment();
+                }
+                ivDateGod.setImageResource(R.drawable.date_god_on);
+                setFragment(fgDateGod);
                 break;
             default:
                     Log.e(TAG, "Wrong tab id is received");

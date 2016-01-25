@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
+    android:gravity="bottom"
     android:background="@color/colorBottomBar">
     <LinearLayout
         android:id="@+id/tab_game_god"
@@ -43,6 +44,25 @@
             android:textStyle="bold"/>
     </LinearLayout>
     <LinearLayout
+        android:id="@+id/tab_date_god"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_weight="1">
+        <ImageView
+            android:id="@+id/iv_date_god"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/date_god"/>
+        <TextView
+            android:id="@+id/it_date_god"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/date_god"
+            android:textStyle="bold"/>
+    </LinearLayout>
+    <LinearLayout
         android:id="@+id/tab_message"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -58,7 +78,8 @@
             android:id="@+id/it_message"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/message"/>
+            android:text="@string/message"
+            android:textStyle="bold"/>
     </LinearLayout>
     <LinearLayout
         android:id="@+id/tab_mine"
@@ -76,6 +97,7 @@
             android:id="@+id/it_mine"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/mine"/>
+            android:text="@string/mine"
+            android:textStyle="bold"/>
     </LinearLayout>
 </LinearLayout>

@@ -62,14 +62,14 @@ public class ImageSlideView extends FrameLayout{
         initData();
 
         if(isAutoPlay){
-            Log.v(TAG,"auto play to start");
+            Log.d(TAG,"auto play to start");
             startPlay();
         }
     }
 
     private void startPlay(){
         scheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
-        Log.v(TAG, "startPlay:" + scheduledExecutorService.toString());
+        Log.d(TAG, "startPlay:" + scheduledExecutorService.toString());
         scheduledExecutorService.scheduleAtFixedRate(new SlideShowTask(), 1, 4, TimeUnit.SECONDS);
     }
 
@@ -81,7 +81,8 @@ public class ImageSlideView extends FrameLayout{
         @Override
         public void run(){
             synchronized (viewPager){
-                currentItem = (currentItem+1)%imageViewList.size();
+                Log.d(TAG, "SlideshowTask is running");
+                currentItem = (currentItem+1) % imageViewList.size();
                 handler.obtainMessage().sendToTarget();
             }
         }
@@ -132,10 +133,10 @@ public class ImageSlideView extends FrameLayout{
         LinearLayout dotLayout = (LinearLayout)findViewById(R.id.imageIndic);
         dotLayout.removeAllViews();
 
-        for (int i = 0; i < imageUrls.length; i++){
+        for (int imgIndex = 0; imgIndex < imageUrls.length; imgIndex++){
             ImageView view = new ImageView(context);
-            view.setTag(imageUrls[i]);
-            switch (i){
+            view.setTag(imageUrls[imgIndex]);
+            switch (imgIndex){
                 case 0:
                     view.setBackgroundResource(R.drawable.image_slide_default);
                     break;
@@ -160,6 +161,14 @@ public class ImageSlideView extends FrameLayout{
             params.leftMargin = 4;
             params.rightMargin = 4;
             dotLayout.addView(dotView, params);
+            dotView.setTag(imgIndex);
+            dotView.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Log.d(TAG, v.getTag().toString());
+                    viewPager.setCurrentItem((int)v.getTag());
+                }
+            });
             dotViewsList.add(dotView);
         }
         viewPager = (ViewPager)findViewById(R.id.viewPager);
@@ -169,24 +178,24 @@ public class ImageSlideView extends FrameLayout{
     }
 
     private class MyPageChangeListener implements ViewPager.OnPageChangeListener{
-        boolean isAutoPlay = false;
+        boolean isManual = false;
 
         @Override
         public void onPageScrollStateChanged(int arg0){
             switch (arg0){
                 case 1:   //scrolling
-                    isAutoPlay = false;
+                    isManual = true;
                     Log.v(TAG, "scrolling");
                     break;
                 case 2:  //switching page
-                    isAutoPlay = true;
+                    isManual = false;
                     Log.v(TAG, "swithing page");
                     break;
                 case 0: //done
-                    if(viewPager.getCurrentItem() == viewPager.getAdapter().getCount()-1 && !isAutoPlay){
+                    if(viewPager.getCurrentItem() == viewPager.getAdapter().getCount()-1 && isManual){
                         viewPager.setCurrentItem(0);
                     }
-                    else if(viewPager.getCurrentItem() == 0 && !isAutoPlay){
+                    else if(viewPager.getCurrentItem() == 0 && isManual){
                         viewPager.setCurrentItem(viewPager.getAdapter().getCount() - 1);
                     }
                     Log.v(TAG, "Done");
