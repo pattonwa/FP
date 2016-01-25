@@ -23,6 +23,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -67,6 +68,8 @@ public class GameGodFragment extends Fragment {
     private EditText boxSearch;
     private ImageView btnSearchEmpty;
 
+    private TextView btnFilter;
+
     public GameGodFragment() {
         // Required empty public constructor
     }
@@ -86,6 +89,16 @@ public class GameGodFragment extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState){
         super.onActivityCreated(savedInstanceState);
+        //initial title bar
+        btnFilter = (TextView)getActivity().findViewById(R.id.btn_filter);
+        btnFilter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "you click on the filter button", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
         //initial search box
         boxSearch = (EditText)getActivity().findViewById(R.id.box_search);
         boxSearch.addTextChangedListener(new TextWatcher() {
@@ -205,10 +218,8 @@ public class GameGodFragment extends Fragment {
     private void initSubTabCursor(){
         cursor = BitmapFactory.decodeResource(getResources(), R.drawable.tab_cursor);
         subTabCursorWidth = cursor.getWidth();
-        Log.d(TAG, "" + subTabCursorWidth);
         DisplayMetrics dm;
         dm = getResources().getDisplayMetrics();
-        Log.d(TAG, ""+dm);
         offset = (dm.widthPixels - 3 * subTabCursorWidth) / 6;
         matrix.setTranslate(offset,0);
         subTabCursor.setImageMatrix(matrix);

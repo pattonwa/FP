@@ -1,4 +1,5 @@
 package com.centling.findplayer;
+import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
@@ -9,7 +10,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends Activity implements View.OnClickListener{
     private String TAG = "MainActivity";
     private LinearLayout tabGameGod;
     private LinearLayout tabExplore;
@@ -113,6 +114,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ivExplore.setImageResource(R.drawable.explore);
         ivMessage.setImageResource(R.drawable.message);
         ivMine.setImageResource(R.drawable.mine);
+        ivDateGod.setImageResource(R.drawable.date_god);
     }
 
 }

@@ -69,7 +69,6 @@ public class ImageSlideView extends FrameLayout{
 
     private void startPlay(){
         scheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
-        Log.d(TAG, "startPlay:" + scheduledExecutorService.toString());
         scheduledExecutorService.scheduleAtFixedRate(new SlideShowTask(), 1, 4, TimeUnit.SECONDS);
     }
 
@@ -81,7 +80,6 @@ public class ImageSlideView extends FrameLayout{
         @Override
         public void run(){
             synchronized (viewPager){
-                Log.d(TAG, "SlideshowTask is running");
                 currentItem = (currentItem+1) % imageViewList.size();
                 handler.obtainMessage().sendToTarget();
             }
@@ -165,7 +163,6 @@ public class ImageSlideView extends FrameLayout{
             dotView.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Log.d(TAG, v.getTag().toString());
                     viewPager.setCurrentItem((int)v.getTag());
                 }
             });
@@ -185,11 +182,9 @@ public class ImageSlideView extends FrameLayout{
             switch (arg0){
                 case 1:   //scrolling
                     isManual = true;
-                    Log.v(TAG, "scrolling");
                     break;
                 case 2:  //switching page
                     isManual = false;
-                    Log.v(TAG, "swithing page");
                     break;
                 case 0: //done
                     if(viewPager.getCurrentItem() == viewPager.getAdapter().getCount()-1 && isManual){
@@ -198,7 +193,6 @@ public class ImageSlideView extends FrameLayout{
                     else if(viewPager.getCurrentItem() == 0 && isManual){
                         viewPager.setCurrentItem(viewPager.getAdapter().getCount() - 1);
                     }
-                    Log.v(TAG, "Done");
                     break;
             }
         }
