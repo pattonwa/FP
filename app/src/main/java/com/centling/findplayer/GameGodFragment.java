@@ -1,9 +1,11 @@
 package com.centling.findplayer;
 
 import android.content.Context;
+
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
+
 import android.os.Bundle;
 import android.app.Fragment;
 import android.support.v4.view.PagerAdapter;
@@ -24,6 +26,11 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.baidu.location.BDLocation;
+import com.baidu.location.BDLocationListener;
+import com.baidu.location.LocationClient;
+import com.baidu.location.LocationClientOption;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -68,7 +75,12 @@ public class GameGodFragment extends Fragment {
     private EditText boxSearch;
     private ImageView btnSearchEmpty;
 
-    private TextView btnFilter;
+    private TextView titleTabFilter;
+    private TextView titleTabGeo;
+
+    private LocationClient mLocationClient = null;
+    private MyLocationListener myLocationListener = new MyLocationListener();
+    private String city = null;
 
     public GameGodFragment() {
         // Required empty public constructor
@@ -90,15 +102,25 @@ public class GameGodFragment extends Fragment {
     public void onActivityCreated(Bundle savedInstanceState){
         super.onActivityCreated(savedInstanceState);
         //initial title bar
-        btnFilter = (TextView)getActivity().findViewById(R.id.btn_filter);
-        btnFilter.setOnClickListener(new View.OnClickListener() {
+        titleTabFilter = (TextView)getActivity().findViewById(R.id.title_tab_filter);
+        titleTabFilter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "you click on the filter button", Toast.LENGTH_SHORT).show();
             }
         });
 
-
+        //initial BDLocation service
+        titleTabGeo = (TextView) getActivity().findViewById(R.id.title_tab_geo);
+        if (city == null) {
+            mLocationClient = new LocationClient(getActivity().getApplicationContext());
+            mLocationClient.registerLocationListener(myLocationListener);
+            initLocation();
+            Log.d(TAG, "this is called");
+            mLocationClient.start();
+        }else {
+            titleTabGeo.setText(city);
+        }
         //initial search box
         boxSearch = (EditText)getActivity().findViewById(R.id.box_search);
         boxSearch.addTextChangedListener(new TextWatcher() {
@@ -193,6 +215,34 @@ public class GameGodFragment extends Fragment {
         subTabHot.setOnClickListener(new SubTabOnClickListener());
         subTabFreshman.setOnClickListener(new SubTabOnClickListener());
 
+    }
+
+    public class MyLocationListener implements BDLocationListener {
+        @Override
+        public void onReceiveLocation(BDLocation location){
+            Log.d(TAG, "The location type: "+ location.getLocType());
+            city = location.getCity();
+            titleTabGeo.setText(city);
+            mLocationClient.stop();
+        }
+    }
+
+    private void initLocation(){
+        LocationClientOption option = new LocationClientOption();
+        option.setLocationMode(LocationClientOption.LocationMode.Hight_Accuracy
+        );//可选，默认高精度，设置定位模式，高精度，低功耗，仅设备
+        option.setCoorType("bd09ll");//可选，默认gcj02，设置返回的定位结果坐标系
+        int span=0;
+        option.setScanSpan(span);//可选，默认0，即仅定位一次，设置发起定位请求的间隔需要大于等于1000ms才是有效的
+        option.setIsNeedAddress(true);//可选，设置是否需要地址信息，默认不需要
+        option.setOpenGps(true);//可选，默认false,设置是否使用gps
+        option.setLocationNotify(true);//可选，默认false，设置是否当gps有效时按照1S1次频率输出GPS结果
+        option.setIsNeedLocationDescribe(true);//可选，默认false，设置是否需要位置语义化结果，可以在BDLocation.getLocationDescribe里得到，结果类似于“在北京天安门附近”
+        option.setIsNeedLocationPoiList(true);//可选，默认false，设置是否需要POI结果，可以在BDLocation.getPoiList里得到
+        option.setIgnoreKillProcess(false);//可选，默认true，定位SDK内部是一个SERVICE，并放到了独立进程，设置是否在stop的时候杀死这个进程，默认不杀死
+        option.SetIgnoreCacheException(false);//可选，默认false，设置是否收集CRASH信息，默认收集
+        option.setEnableSimulateGps(false);//可选，默认false，设置是否需要过滤gps仿真结果，默认需要
+        mLocationClient.setLocOption(option);
     }
 
     private class SubTabOnClickListener implements View.OnClickListener{

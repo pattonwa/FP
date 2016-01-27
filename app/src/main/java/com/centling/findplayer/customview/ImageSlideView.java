@@ -44,7 +44,6 @@ public class ImageSlideView extends FrameLayout{
         @Override
         public  void handleMessage(Message msg){
             super.handleMessage(msg);
-            Log.v(TAG, "handler set the image");
             viewPager.setCurrentItem(currentItem);
         }
     };
@@ -86,7 +85,7 @@ public class ImageSlideView extends FrameLayout{
         }
     }
 
-    public static void initImageLoader(Context context){
+    public void initImageLoader(Context context){
         ImageLoaderConfiguration imgConfig = new ImageLoaderConfiguration.Builder(context).threadPriority(Thread.NORM_PRIORITY).build();
         ImageLoader.getInstance().init(imgConfig);
     }
@@ -136,7 +135,7 @@ public class ImageSlideView extends FrameLayout{
             view.setTag(imageUrls[imgIndex]);
             switch (imgIndex){
                 case 0:
-                    view.setBackgroundResource(R.drawable.image_slide_default);
+                    view.setBackgroundResource(R.drawable.tmp4);
                     break;
                 case 1:
                     view.setImageResource(R.drawable.tmp1);
@@ -148,7 +147,7 @@ public class ImageSlideView extends FrameLayout{
                     view.setImageResource(R.drawable.tmp3);
                     break;
                 default:
-                    view.setImageResource(R.drawable.tmp4);
+                    view.setImageResource(R.drawable.image_slide_default);
                     break;
             }
             view.setScaleType(ImageView.ScaleType.FIT_XY);

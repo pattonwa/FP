@@ -14,18 +14,5 @@
         android:padding="8dp"
         android:gravity="right"
         android:orientation="horizontal">
-        <!--
-        <View
-            android:id="@+id/dot1"
-            android:layout_width="8dp"
-            android:layout_height="8dp"
-            android:background="@drawable/dot_on"/>
-        <View
-            android:id="@+id/dot2"
-            android:layout_width="8dp"
-            android:layout_height="8dp"
-            android:layout_marginLeft="5dp"
-            android:background="@drawable/dot_off"/>
-            -->
     </LinearLayout>
 </RelativeLayout>

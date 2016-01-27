@@ -10,6 +10,11 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.baidu.location.BDLocation;
+import com.baidu.location.BDLocationListener;
+import com.baidu.location.LocationClient;
+import com.baidu.location.LocationClientOption;
+
 public class MainActivity extends Activity implements View.OnClickListener{
     private String TAG = "MainActivity";
     private LinearLayout tabGameGod;
@@ -30,7 +35,6 @@ public class MainActivity extends Activity implements View.OnClickListener{
     private MineFragment fgMine;
     private DateGodFragment fgDateGod;
     private FragmentManager fm;
-
 
 
     @Override
