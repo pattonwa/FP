@@ -3,12 +3,143 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.centling.findplayer.DateGodFragment">
-
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/date_god_fragment"
-        android:textSize="@dimen/sub_tab_size"
-        android:background="#333FF0"/>
-
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dg_title_date"
+            android:textSize="@dimen/title_big"
+            android:layout_gravity="center_horizontal" />
+        <RelativeLayout
+            android:id="@+id/dg_opt_game"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/dg_opt_bg">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dg_opt_game"
+                android:textSize="@dimen/opt_mid"
+                android:layout_centerVertical="true"/>
+            <TextView
+                android:id="@+id/dg_game_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:textSize="@dimen/opt_mid" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/dg_opt_sex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/dg_opt_bg">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/dg_opt_sex"
+                android:textSize="@dimen/opt_mid"/>
+            <TextView
+                android:id="@+id/dg_sex_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:textSize="@dimen/opt_mid" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/dg_opt_start"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/dg_opt_bg">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/dg_opt_start"
+                android:textSize="@dimen/opt_mid"/>
+            <TextView
+                android:id="@+id/dg_start_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:textSize="@dimen/opt_mid" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/dg_opt_dur"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/dg_opt_bg">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/dg_opt_time"
+                android:textSize="@dimen/opt_mid"/>
+            <TextView
+                android:id="@+id/dg_dur_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:textSize="@dimen/opt_mid" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/dg_opt_loc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/dg_opt_bg">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/dg_opt_place"
+                android:textSize="@dimen/opt_mid"/>
+            <TextView
+                android:id="@+id/dg_loc_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:textSize="@dimen/opt_mid" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/dg_opt_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/dg_opt_bg">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/dg_opt_price"
+                android:textSize="@dimen/opt_mid"/>
+            <TextView
+                android:id="@+id/dg_price_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:textSize="@dimen/opt_mid" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#D3D3D3"
+            android:layout_weight="1">
+        <Button
+            android:id="@+id/dg_btn_rel"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_centerInParent="true"
+            android:text="@string/dg_btn_find"
+            android:textSize="18sp"
+            android:background="@drawable/dg_btn_bg"/>
+        </RelativeLayout>
+    </LinearLayout>
 </FrameLayout>

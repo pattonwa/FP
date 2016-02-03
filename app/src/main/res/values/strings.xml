@@ -1,4 +1,5 @@
 <resources>
+    <!--The string used in game god-->
     <string name="app_name">Find Player</string>
     <string name="game_god_fragment">This is the game god fragment</string>
     <string name="explore_fragment">This is the explore fragment</string>
@@ -14,7 +15,14 @@
     <string name="tab_freshman">新手</string>
     <string name="date_god">约神</string>
     <string name="search">请输入文字……</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="location">未定位</string>
+    <!--The string used in Data god-->
+    <string name="dg_title_date">我要约玩</string>
+    <string name="dg_opt_game">游戏类别</string>
+    <string name="dg_opt_sex">游神性别</string>
+    <string name="dg_opt_start">开始时间</string>
+    <string name="dg_opt_time">陪玩时长</string>
+    <string name="dg_opt_place">陪玩地点</string>
+    <string name="dg_opt_price">陪玩单价</string>
+    <string name="dg_btn_find">"              "发布邀约"              "</string>
 </resources>

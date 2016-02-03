@@ -220,10 +220,14 @@ public class GameGodFragment extends Fragment {
     public class MyLocationListener implements BDLocationListener {
         @Override
         public void onReceiveLocation(BDLocation location){
-            Log.d(TAG, "The location type: "+ location.getLocType());
-            city = location.getCity();
-            titleTabGeo.setText(city);
-            mLocationClient.stop();
+            Log.d(TAG, "The location type: " + location.getLocType());
+            if(location.getLocType() == BDLocation.TypeGpsLocation ||
+                    location.getLocType() == BDLocation.TypeNetWorkLocation ||
+                    location.getLocType() == BDLocation.TypeOffLineLocation) {
+                city = location.getCity();
+                titleTabGeo.setText(city);
+                mLocationClient.stop();
+            }
         }
     }
 

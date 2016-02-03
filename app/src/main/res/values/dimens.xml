@@ -5,4 +5,6 @@
     <dimen name="sub_tab_size">25sp</dimen>
     <dimen name="title_small">15sp</dimen>
     <dimen name="title_big">25sp</dimen>
+    <dimen name="opt_mid">18sp</dimen>
+
 </resources>
