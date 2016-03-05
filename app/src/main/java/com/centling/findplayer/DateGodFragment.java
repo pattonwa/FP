@@ -137,7 +137,7 @@ public class DateGodFragment extends Fragment {
             }else if (dialog.equals(priceDialog)){
                 price = etPrice.getText().toString();
                 if (!isNumeric(price)){
-                    Toast.makeText(getActivity(), "Only number is allowed", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity(), "Only number is allowed!", Toast.LENGTH_LONG).show();
                     return;
                 }
                 priceValue.setText(price + "元/小时");
