@@ -4,4 +4,6 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#3D3D3D</color>
     <color name="colorBottomBar">#FFFFFF</color>
+    <color name="fcl">#00cccc</color><!--翡翠蓝-->
+    <color name="gray">#ff888888</color><!--灰-->
 </resources>
