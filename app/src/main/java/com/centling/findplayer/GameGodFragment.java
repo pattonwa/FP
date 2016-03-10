@@ -2,6 +2,7 @@ package com.centling.findplayer;
 
 import android.content.Context;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
@@ -107,6 +108,8 @@ public class GameGodFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "you click on the filter button", Toast.LENGTH_SHORT).show();
+//                Intent filterIntent = new Intent(getActivity(), MainActivity.class);
+//                startActivity(titleTabFilter);
             }
         });
 

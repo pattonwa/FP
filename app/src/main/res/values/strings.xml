@@ -25,4 +25,6 @@
     <string name="dg_opt_place">陪玩地点</string>
     <string name="dg_opt_price">陪玩单价</string>
     <string name="dg_btn_find">"              "发布邀约"              "</string>
+    <!--The string used in Mine-->
+    <string name="me_title">我的</string>
 </resources>

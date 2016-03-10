@@ -7,6 +7,14 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 
 
 /**
@@ -16,13 +24,15 @@ import android.view.ViewGroup;
  * to handle interaction events.
  */
 public class MineFragment extends Fragment {
+    private boolean player;
+    private final String item_img = "item_img";
+    private final String item_name = "item_name";
+    private final String item_arrow = "item_arrow";
 
-    private OnFragmentInteractionListener mListener;
 
     public MineFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -31,28 +41,81 @@ public class MineFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_mine, container, false);
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState){
+        super.onActivityCreated(savedInstanceState);
+
+        TextView myNickname = (TextView)getActivity().findViewById(R.id.mine_nickname);
+        myNickname.setText("我是美妞");
+        TextView myAge = (TextView)getActivity().findViewById(R.id.mine_age);
+        myAge.setText("23");
+        //Need interface to decide if this user is a player
+        player = false;
+        ListView mineList = (ListView)getActivity().findViewById(R.id.mine_item_list);
+        initialListView(mineList);
+    }
+    private void initialListView(ListView lv){
+        ArrayList<HashMap<String, Object>> itemList = new ArrayList<HashMap<String, Object>>();
+        //我的钱包
+        HashMap<String, Object> item_wallet = new HashMap<String, Object>();
+        item_wallet.put(item_img, R.drawable.me_wallet);
+        item_wallet.put(item_name, "我的钱包");
+        item_wallet.put(item_arrow, R.drawable.right_arrow);
+        itemList.add(item_wallet);
+
+        if (player){
+            HashMap<String, Object> item_clan = new HashMap<String, Object>();
+            item_clan.put(item_img, R.drawable.me_clan);
+            item_clan.put(item_name, "申请公会");
+            item_clan.put(item_arrow, R.drawable.right_arrow);
+            itemList.add(item_clan);
+
+        }else{
+            HashMap<String, Object> item_gamegod = new HashMap<String, Object>();
+            item_gamegod.put(item_img,R.drawable.me_game_god);
+            item_gamegod.put(item_name, "申请游神");
+            item_gamegod.put(item_arrow, R.drawable.right_arrow);
+            itemList.add(item_gamegod);
         }
+
+        HashMap<String, Object> item_attention = new HashMap<String, Object>();
+        item_attention.put(item_img, R.drawable.me_attention);
+        item_attention.put(item_name, "我的关注");
+        item_attention.put(item_arrow, R.drawable.right_arrow);
+        itemList.add(item_attention);
+
+        HashMap<String, Object> item_partner = new HashMap<String, Object>();
+        item_partner.put(item_img, R.drawable.me_partner);
+        item_partner.put(item_name, "我的陪玩");
+        item_partner.put(item_arrow, R.drawable.right_arrow);
+        itemList.add(item_partner);
+
+        HashMap<String, Object> item_set = new HashMap<String, Object>();
+        item_set.put(item_img, R.drawable.me_set);
+        item_set.put(item_name, "设置");
+        item_set.put(item_arrow, R.drawable.right_arrow);
+        itemList.add(item_set);
+
+        String[] from = {item_img, item_name, item_arrow};
+        int[] to = {R.id.mine_item_img, R.id.mine_item_name, R.id.mine_item_arrow};
+        SimpleAdapter sa = new SimpleAdapter(getActivity(), itemList, R.layout.mine_item_list_layout, from, to);
+        lv.setAdapter(sa);
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(getActivity(), "you click on "+position, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
-        mListener = null;
     }
 
     /**
