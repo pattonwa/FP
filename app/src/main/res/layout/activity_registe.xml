@@ -1,0 +1,111 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg" 
+    android:orientation="vertical">
+    
+   <TextView 
+       android:id="@+id/reg_title"
+       android:layout_width="wrap_content"
+       android:layout_height="100dp"
+       android:gravity="center"
+       android:layout_gravity="center"
+       android:text="@string/app_name"
+       android:textColor="#000"
+       android:textSize="20sp"/>
+    
+    <RelativeLayout
+        android:id="@+id/reg_keyElement"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+        <RelativeLayout
+            android:id="@+id/reg_accountInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/setbar_bg"
+            android:clickable="true"
+            android:gravity="center_vertical">
+            
+            <EditText
+                android:id="@+id/reg_accountEdit"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dip"
+                android:digits="1234567890."
+                android:drawableLeft="@drawable/phone"
+                android:drawableStart="@drawable/phone"
+                
+                android:hint="@string/type_account"
+                android:textSize="15sp"/> 
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/reg_pwInput"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/reg_accountInput"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/setbar_bg"
+            android:clickable="true"
+            android:gravity="center_vertical">
+              
+            <EditText 
+                android:id="@+id/reg_pwdEdit"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dip"
+                android:drawableLeft="@drawable/lock"
+                android:drawableStart="@drawable/lock"
+                
+                android:hint="@string/type_identify_code"
+                android:textSize="15sp"/>
+        </RelativeLayout>
+        
+    </RelativeLayout>
+
+       <LinearLayout 
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content" 
+		android:layout_marginTop="20dip"
+		android:gravity="center"> 
+		<CheckBox 
+		android:id="@+id/reg_checkBox" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content"/> 
+		
+		<TextView
+        android:id="@+id/reg_agree_contract"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" 
+        android:text="@string/agree_state"
+        android:textColor="#6C6C6C"/>
+	</LinearLayout> 
+	
+    <LinearLayout
+        android:id="@+id/reg_btns"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dip"
+        android:gravity="center_vertical"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/reg_nextStepBtn"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center"
+            android:background="@color/gray"
+            android:text="@string/nextStep"
+            android:textColor="#000" 
+            android:enabled="false"/>
+    </LinearLayout>
+ 
+</LinearLayout>

@@ -1,0 +1,60 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg" 
+    android:orientation="vertical">
+	
+   <TextView 
+       android:id="@+id/login_title"
+       android:layout_width="wrap_content"
+       android:layout_height="100dp"
+       android:gravity="center"
+       android:layout_gravity="center"
+       android:text="@string/app_name"
+       android:textColor="#000"
+       android:textSize="20sp"/>
+   
+    <RelativeLayout
+        android:id="@+id/set_pwd_pwInput"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/setbar_bg"
+        android:clickable="true"
+        android:gravity="center_vertical"
+        android:layout_gravity="center">
+        
+        <TextView 
+            android:id="@+id/set_pwd_pwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="@string/pwd"
+            android:textColor="#000"
+            android:textSize="17sp"/>
+        <EditText 
+            style="?android:attr/textViewStyle"
+            
+            android:id="@+id/set_pwd_pwdEdit"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/set_pwd_pwd"
+            android:inputType="textPassword"
+            android:hint="@string/type_pwd"
+            android:textSize="15sp"/>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/set_pwd_finishBtn"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center"
+        android:text="@string/accomplish"
+        android:background="@color/fcl"
+        android:textColor="#000" />
+
+</LinearLayout>
