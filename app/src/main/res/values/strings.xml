@@ -27,5 +27,28 @@
     <string name="dg_btn_find">"              "发布邀约"              "</string>
     <!--The string used in Mine-->
     <string name="me_title">我的</string>
-    <string name="title_activity_test_acitivy">TestAcitivy</string>
+    <!-- The String used in login,registe,set_pwd,forget_pw -->
+    <string name="reg_title">注册</string>
+    <string name="setpwd_title">设置密码</string>
+    <string name="fpwd_title">找回密码</string>
+
+    <string name="login_title">登录</string>
+    <string name="registe_title">注册</string>
+    <string name="forget_title">找回密码</string>
+    <string name="account">账号</string>
+    <string name="pwd">密码</string>
+    <string name="identify_code">验证码</string>
+    <string name="type_account">请输入注册手机号</string>
+    <string name="type_pwd">请输入密码</string>
+    <string name="type_identify_code">请输入验证码</string>
+    <string name="confirm">确定</string>
+    <string name="registe">注册</string>
+    <string name="forget_pwd">忘记密码?</string>
+    <string name="agree_state">我已阅读同意《"找玩家"用户协议》</string>
+    <string name="nextStep">下一步</string>
+    <string name="accomplish">完成</string>
+    <string name="left_text">设置密码</string>
+    <string name="forget_set_pwd">请输入新密码</string>
+    <string name="test_show">这是一个叫做show的EditText</string>
+    <string name="action_settings">Settings</string>
 </resources>
