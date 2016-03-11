@@ -17,4 +17,72 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <!-- 最外层样式 -->
+    <style name="PDInfo_wrap_layout">
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:padding">1px</item>
+        <item name="android:background">@drawable/pdinfo_bg_layout_shape</item>
+    </style>
+
+    <!-- 共用层样式 -->
+    <style name="PDInfo_base_layout">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="android:paddingLeft">12dp</item>
+        <item name="android:paddingRight">12dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <!--无圆角样式  -->
+    <style name="PDInfo_mid_layout" parent="PDInfo_base_layout">
+        <item name="android:background">@drawable/pdinfo_mid_layout_selector</item>
+    </style>
+
+    <!-- 全圆角样式 -->
+    <style name="PDInfo_single_layout" parent="PDInfo_base_layout">
+        <item name="android:background">@drawable/pdinfo_single_layout_selector</item>
+    </style>
+
+    <!-- view分割线样式 -->
+    <style name="PDInfo_bg_line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1px</item>
+        <item name="android:background">@color/PDInfo_border_color</item>
+    </style>
+
+    <!-- view分割线样式 -->
+    <style name="PDInfo_vertical_line">
+        <item name="android:layout_width">4px</item>
+        <item name="android:layout_height">15dp</item>
+        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:layout_marginRight">8dp</item>
+        <item name="android:background">@color/PDInfo_border_color</item>
+        <item name="android:layout_gravity">center_vertical</item>
+    </style>
+
+    <!-- textview样式 -->
+    <style name="PDInfo_usertext">
+        <item name="android:textSize">16dp</item>
+        <item name="android:textColor">@color/PDInfo_text_color</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <!-- 文本右边箭头样式 -->
+    <style name="PDInfo_img_arrow">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:src">@drawable/pdinfo_setting_arrow</item>
+
+    </style>
+
 </resources>

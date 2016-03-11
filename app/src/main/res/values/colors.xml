@@ -6,4 +6,11 @@
     <color name="colorBottomBar">#FFFFFF</color>
     <color name="fcl">#00cccc</color><!--翡翠蓝-->
     <color name="gray">#ff888888</color><!--灰-->
+    <color name="PDInfo_turquoise">#40E0D0</color> <!--青绿色 -->
+    <color name="PDInfo_border_color">#ccc</color>
+    <color name="PDInfo_white">#fff</color>
+    <color name="PDInfo_blue">#419DE4</color>
+    <color name="PDInfo_deeppink">#FF1493</color> <!--深粉红色 -->
+    <color name="PDInfo_text_color">#333</color>
+    <color name="PDInfo_gray">#ff888888</color>
 </resources>

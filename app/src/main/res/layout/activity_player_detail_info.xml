@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_gravity="top">
+
+    <FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/main_tab_banner"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/PDInfo_turquoise"
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip">
+
+        <TextView
+            android:id="@+id/textViewBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center_vertical"
+            android:padding="8dip"
+            android:textSize="18dip"
+            android:text="返回"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="喵千百"
+            android:textColor="#000000"
+            android:textSize="18dip"
+            android:id="@+id/textViewTitle"/>
+
+        <TextView
+            android:id="@+id/textViewDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:padding="8dip"
+            android:textSize="18dip"
+            android:text="详情"/>
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/main_bottom_tool"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/PDInfo_turquoise"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/imageButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:layout_gravity="left|center_vertical"
+            android:src="@drawable/pdinfo_attention"
+            android:background="#00000000"/>
+
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/pdinfo_chat"
+            android:background="#00000000"/>
+
+        <LinearLayout
+            android:id="@+id/main_bottom_subtool"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/TextViewCheck"
+                android:text="约他"
+                android:textColor="#000000"
+                android:textSize="18dip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/main_tab_banner"
+        android:layout_above="@id/main_bottom_tool">
+        <LinearLayout
+            android:id="@+id/main_tab_container"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="150dp">
+
+                <HorizontalScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="#AA444444"
+                    android:scrollbars="none" >
+
+                    <LinearLayout
+                        android:id="@+id/id_gallery"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:orientation="horizontal" >
+                    </LinearLayout>
+                </HorizontalScrollView>
+            </LinearLayout>
+
+            <!-- 个人资料信息栏 -->
+            <View style="@style/PDInfo_bg_line"/>
+            <LinearLayout style="@style/PDInfo_mid_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/PDInfo_deeppink"
+                    android:orientation="horizontal" >
+
+                    <!-- ImageView style="@style/img_arrow"/-->
+                    <TextView
+                        android:textSize="16dp"
+                        android:textColor="@color/PDInfo_text_color"
+                        android:text="女"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:textSize="16dp"
+                        android:textColor="@color/PDInfo_text_color"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="24"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:orientation="horizontal"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:textSize="16dp"
+                        android:textColor="@color/PDInfo_text_color"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="白羊座"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:textSize="16dp"
+                        android:textColor="@color/PDInfo_gray"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="9.94 km"/>
+                    <View style="@style/PDInfo_vertical_line"/>
+                    <TextView
+                        android:textSize="16dp"
+                        android:textColor="@color/PDInfo_gray"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3小时前"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- 分割线 -->
+            <View style="@style/PDInfo_bg_line"/>
+
+            <!-- 个性签名信息栏 -->
+            <LinearLayout style="@style/PDInfo_wrap_layout">
+                <!-- 无圆角-->
+                <LinearLayout style="@style/PDInfo_mid_layout">
+                    <TextView
+                        android:textSize="16dp"
+                        android:textColor="@color/PDInfo_gray"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="个性签名"/>
+
+                    <TextView
+                        android:textSize="16dp"
+                        android:textColor="@color/PDInfo_text_color"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="40dp"
+                        android:text="有事鱼泡泡联系,不加SB!"/>
+                </LinearLayout>
+
+                <!-- 分割线 -->
+                <View style="@style/PDInfo_bg_line"/>
+                <!-- 无圆角-->
+                <LinearLayout style="@style/PDInfo_mid_layout">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:textSize="16dp"
+                            android:textColor="@color/PDInfo_gray"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="个人动态"/>
+                        <TextView
+                            android:textSize="32dp"
+                            android:textColor="@android:color/darker_gray"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="12dp"
+                            android:text="11"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginLeft="40dp">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <ImageView
+                                android:id="@+id/userStatus"
+                                android:layout_width="90dp"
+                                android:layout_height="90dp"
+                                android:layout_alignParentTop="true"
+                                android:layout_centerHorizontal="true"
+                                android:layout_margin="5dp"
+                                android:scaleType="centerCrop"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView
+                                android:textSize="16dp"
+                                android:textColor="@color/PDInfo_text_color"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="组个妹子战队，有没有李村附近手打铂金以上的，想参加的..."/>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:textSize="16dp"
+                                    android:textColor="@color/PDInfo_gray"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="5.94 km"/>
+                                <View style="@style/PDInfo_vertical_line"/>
+                                <TextView
+                                    android:textSize="16dp"
+                                    android:textColor="@color/PDInfo_gray"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="09-01"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <!-- 个性签名信息栏 -->
+            <LinearLayout style="@style/PDInfo_wrap_layout">
+                <!-- 无圆角-->
+                <LinearLayout style="@style/PDInfo_mid_layout">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/pdinfo_game_logo"/>
+                    <TextView style="@style/PDInfo_usertext" android:text="德玛西亚"
+                        android:layout_marginLeft="6dp"/>
+                    <ImageView style="@style/PDInfo_img_arrow"/>
+                </LinearLayout>
+
+                <!-- 分割线 -->
+                <View style="@style/PDInfo_bg_line"/>
+
+                <!-- 无圆角-->
+                <LinearLayout style="@style/PDInfo_mid_layout">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/pdinfo_hot"/>
+                            <TextView
+                                android:textSize="16dp"
+                                android:textColor="@color/PDInfo_text_color"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:text="372"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:textSize="16dp"
+                                android:textColor="@android:color/darker_gray"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="综合满意度"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="24dp"
+                        android:layout_weight="1">
+                        <TextView
+                            android:textSize="16dp"
+                            android:textColor="@android:color/darker_gray"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"/>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/pdinfo_full_star"/>
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/pdinfo_full_star"/>
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/pdinfo_full_star"/>
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/pdinfo_half_star"/>
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/pdinfo_none_star"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_weight="1">
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/pdinfo_noheart"/>
+                                <TextView
+                                    android:textSize="16dp"
+                                    android:textColor="@color/PDInfo_text_color"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="12dp"
+                                    android:text="26"/>
+                            </LinearLayout>
+
+                            <TextView
+                                android:textSize="16dp"
+                                android:textColor="@color/PDInfo_text_color"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="3次评价"/>
+                            <TextView
+                                android:textSize="16dp"
+                                android:textColor="@android:color/darker_gray"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="接单3次"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout style="@style/PDInfo_wrap_layout">
+
+                <LinearLayout style="@style/PDInfo_single_layout">
+                    <TextView
+                        android:textSize="16dp"
+                        android:textColor="@color/PDInfo_gray"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="行业"/>
+
+                    <TextView
+                        android:textSize="16dp"
+                        android:textColor="@color/PDInfo_text_color"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="72dp"
+                        android:text="文化/广告/传媒"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
