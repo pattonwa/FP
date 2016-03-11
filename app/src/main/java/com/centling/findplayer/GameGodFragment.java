@@ -107,9 +107,9 @@ public class GameGodFragment extends Fragment {
         titleTabFilter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "you click on the filter button", Toast.LENGTH_SHORT).show();
-//                Intent filterIntent = new Intent(getActivity(), MainActivity.class);
-//                startActivity(titleTabFilter);
+ //               Toast.makeText(getActivity(), "you click on the filter button", Toast.LENGTH_SHORT).show();
+                Intent filterIntent = new Intent(getActivity(), FiltrateActivity.class);
+                startActivity(filterIntent);
             }
         });
 

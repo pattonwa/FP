@@ -9,38 +9,38 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:orientation="vertical"
-        android:scrollbarStyle="outsideInset"
-        android:background="@drawable/activity_ng">
+        android:scrollbarStyle="outsideInset">
 
         <RelativeLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#4169E1"
             >
 
-            <Button
-                android:id="@+id/Button_23"
+            <TextView
+                android:id="@+id/back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
-                android:background="@drawable/button_selector"
                 android:padding="5dp"
+                android:textColor="#FFFFFF"
                 android:layout_centerVertical="true"
                 android:text="返回"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:textSize="32sp"
-                android:textColor="#00ff00"
+                android:textSize="28sp"
+                android:textColor="#FFFFFF"
                 android:text="筛选"/>
-            <Button
-                android:id="@+id/Button_24"
+            <TextView
+                android:id="@+id/done"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:background="@drawable/button_selector"
                 android:padding="5dp"
+                android:textColor="#FFFFFF"
                 android:layout_centerVertical="true"
                 android:text="确定"/>
         </RelativeLayout>
@@ -48,8 +48,6 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#00ff00"
-            android:textSize="32sp"
             android:text="性别"/>
         <LinearLayout
             android:layout_width="match_parent"
@@ -86,8 +84,6 @@
         </LinearLayout>
 
         <TextView
-            android:textColor="#00ff00"
-            android:textSize="32sp"
             android:id="@+id/edittext_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -155,8 +151,6 @@
 
         </LinearLayout>
         <TextView
-            android:textColor="#00ff00"
-            android:textSize="32sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="游戏"/>
@@ -281,8 +275,8 @@
         </LinearLayout>
 
         <TextView
-            android:textColor="#00ff00"
-            android:textSize="32sp"
+            android:textColor="#000000"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="距离"/>

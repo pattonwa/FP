@@ -27,4 +27,5 @@
     <string name="dg_btn_find">"              "发布邀约"              "</string>
     <!--The string used in Mine-->
     <string name="me_title">我的</string>
+    <string name="title_activity_test_acitivy">TestAcitivy</string>
 </resources>
