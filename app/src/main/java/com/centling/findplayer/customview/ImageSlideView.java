@@ -147,7 +147,7 @@ public class ImageSlideView extends FrameLayout{
                     view.setImageResource(R.drawable.tmp3);
                     break;
                 default:
-                    view.setImageResource(R.drawable.image_slide_default);
+                    view.setImageResource(R.drawable.tmp1);
                     break;
             }
             view.setScaleType(ImageView.ScaleType.FIT_XY);

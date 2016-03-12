@@ -316,7 +316,7 @@ public class GameGodFragment extends Fragment {
     }
     private void initialListView(ListView lv){
         ArrayList<HashMap<String, Object>> itemList = new ArrayList<HashMap<String, Object>>();
-        for(int i=0; i < 10; i++){
+        for(int i=0; i < 5; i++){
             HashMap<String, Object> item = new HashMap<String, Object>();
             if (lv.getId() == listViewSynthesisId){
                 item.put(itemPlayerIcon, R.drawable.tmp_player1);
@@ -341,7 +341,10 @@ public class GameGodFragment extends Fragment {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                getActivity().setTitle("you click on " + position + "!");
+                Intent detailInfoIntent = new Intent(getActivity(), PlayerDetailInfoActivity.class);
+                TextView playerName = (TextView)view.findViewById(R.id.player_name);
+                detailInfoIntent.putExtra("name", playerName.getText());
+                startActivity(detailInfoIntent);
             }
         });
     }

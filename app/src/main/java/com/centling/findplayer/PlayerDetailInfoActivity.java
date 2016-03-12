@@ -1,5 +1,6 @@
 package com.centling.findplayer;
 
+import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,7 +10,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-public class PlayerDetailInfo extends AppCompatActivity {
+public class PlayerDetailInfoActivity extends Activity {
 
     private LinearLayout mGallery;
     private int[] mImgIds;
@@ -20,6 +21,8 @@ public class PlayerDetailInfo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player_detail_info);
         mInflater = LayoutInflater.from(this);
+        Bundle playerInfo = this.getIntent().getExtras();
+        String playerName = playerInfo.getString("name");
         initData();
         initView();
         initUserStatus();

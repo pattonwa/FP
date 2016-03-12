@@ -36,7 +36,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".FiltrateActivity"></activity>
-
+        <activity android:name=".PlayerDetailInfoActivity"></activity>
         <service
             android:name="com.baidu.location.f"
             android:enabled="true"
@@ -45,8 +45,6 @@
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="bWAeCTodnHNUkTjUWmKKlF2i" />
-
-        <activity android:name=".PlayerDetailInfo"></activity>
     </application>
 
 </manifest>
